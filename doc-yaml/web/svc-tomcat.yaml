@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-tomcat
+  labels:
+    app: web
+    type: backend
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: 30012
+  selector:
+    app: web
