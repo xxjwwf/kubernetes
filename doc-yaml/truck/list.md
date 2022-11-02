@@ -10,3 +10,6 @@ Secret in version "v1" cannot be handled as a Secret
 The Secret "harbor-robot-secret" is invalid: data[.dockerconfigjson]: Invalid value: "<secret contents redacted>": invalid character 'r' looking for beginning of value
 ```
 解决：base64还是有问题，得使用不换行模式进行转码：`cat ~/.docker/config.json |base64 -w 0`
+
+3.nfs读写权限挂载到pod上后，pod不能读写，宿主机也不能读写此目录
+解决：nfs需要对相应目录的rwx权限也要设置，如果要赋写权限，那么目录必须要有w权限
