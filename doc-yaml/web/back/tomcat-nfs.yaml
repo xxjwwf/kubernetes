@@ -36,6 +36,8 @@ spec:
         volumeMounts:
         - name: tz-config
           mountPath: /etc/localtime
+        - name: logs-config
+          mountPath: /usr/local/apache-tomcat-9.0.68/logs
       volumes:
       - name: tz-config
         hostPath:
