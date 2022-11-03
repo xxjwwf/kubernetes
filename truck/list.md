@@ -13,9 +13,11 @@ The Secret "harbor-robot-secret" is invalid: data[.dockerconfigjson]: Invalid va
 **解决：** 
 base64还是有问题，得使用不换行模式进行转码：`cat ~/.docker/config.json |base64 -w 0`
 
+---
 
 3.nfs读写权限挂载到pod上后，pod不能读写，宿主机也不能读写此目录
   决：nfs需要对相应目录的rwx权限也要设置，如果要赋写权限，那么目录必须要有w权限
+
 ---
 
 4.我的harbor网站是放在自己的电脑虚拟机里面的，每次不用的时候就将虚拟机挂起，但是我发现每次挂起前服务都是能从电脑本机正常访问的，挂起完再恢复虚拟机时，从本机电脑上就不能访问了。
