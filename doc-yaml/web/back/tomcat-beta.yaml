@@ -5,6 +5,7 @@ metadata:
   labels: 
     app: web
     type: backend
+    version: beta
   namespace: default
 spec:
   replicas: 3
@@ -36,14 +37,13 @@ spec:
         volumeMounts:
         - name: tz-config
           mountPath: /etc/localtime
+        - name: web-data-beta
+          mountPath: /usr/local/apache-tomcat-9.0.68/webapps
       volumes:
       - name: tz-config
         hostPath:
           path: /usr/share/zoneinfo/Asia/Shanghai
-      - name: logs-config
-        hostPath:
-          path: /data/logs
-      - name: web-data
+      - name: web-data-beta
         nfs:
           server: nfs-server.xiejiawen.cn
           path: /data/tomcat/beta/web/webapps

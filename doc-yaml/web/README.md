@@ -1,7 +1,7 @@
 
 ### tomcat服务的基本实现：
   1.实现tomcat日志目录的外部外载，可实时查看日志
-  2.实现webapps目录的外部挂载，可实时更新web内容
+  2.实现webapps目录的外部挂载，可实时更新web内容,实现蓝绿部署
   3.实现tomcat服务的入口配置，ingress
   4.实现rolebinding及serviceAccountName，实现configmap
 

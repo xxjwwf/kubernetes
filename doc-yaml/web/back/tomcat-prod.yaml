@@ -1,10 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deploy-tomcat
+  name: deploy-tomcat2
   labels: 
     app: web
     type: backend
+    version: prod
   namespace: default
 spec:
   replicas: 3
@@ -21,32 +22,31 @@ spec:
       maxUnavailable: 1
   template: 
     metadata: 
-      name: tomcat-test
+      name: tomcat-prod
       labels:
         app: web
         type: backend
     spec:
       imagePullSecrets: 
-      - name: harbor-pull-secret # 使用harbor机器人账号创建
+      - name: arbor-robot-secret # 使用harbor机器人账号创建
       containers:
-      - name: tomcat-container
+      - name: tomcat-container-prod
         image: harbor.xiejiawen.cn/k8s-learn/tomcat9-jdk9-base:v1
         ports:
         - containerPort: 8080
         volumeMounts:
         - name: tz-config
           mountPath: /etc/localtime
-        - name: logs-config
-          mountPath: /usr/local/apache-tomcat-9.0.68/logs
+        - name: web-data-prod
+          mountPath: /usr/local/apache-tomcat-9.0.68/webapps
       volumes:
       - name: tz-config
         hostPath:
           path: /usr/share/zoneinfo/Asia/Shanghai
-      - name: logs-config
-        hostPath:
-          path: /data/logs
-      - name: web-data
+      - name: web-data-prod
         nfs:
           server: nfs-server.xiejiawen.cn
-          path: /data/tomcat/beta/web/webapps
+          path: /data/tomcat/prod/web/webapps
           #readOnly: true
+
+
