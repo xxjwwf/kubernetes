@@ -12,6 +12,7 @@ spec:
   selector:
     matchLabels:
       app: web
+      version: prod
   minReadySeconds: 1
   progressDeadlineSeconds: 60
   revisionHistoryLimit: 3
@@ -26,6 +27,7 @@ spec:
       labels:
         app: web
         type: backend
+        version: prod
     spec:
       imagePullSecrets: 
       - name: arbor-robot-secret # 使用harbor机器人账号创建

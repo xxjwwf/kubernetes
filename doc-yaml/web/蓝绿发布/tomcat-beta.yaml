@@ -12,6 +12,7 @@ spec:
   selector:
     matchLabels:
       app: web
+      version: beta
   minReadySeconds: 1
   progressDeadlineSeconds: 60
   revisionHistoryLimit: 3
@@ -22,10 +23,11 @@ spec:
       maxUnavailable: 1
   template: 
     metadata: 
-      name: tomcat-test
+      name: tomcat-beta
       labels:
         app: web
         type: backend
+        version: beta
     spec:
       imagePullSecrets: 
       - name: harbor-pull-secret # 使用harbor机器人账号创建

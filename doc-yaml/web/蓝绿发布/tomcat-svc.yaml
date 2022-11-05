@@ -5,11 +5,10 @@ metadata:
   labels:
     app: web
     type: backend
-    version: v2
 spec:
   type: NodePort
   ports:
   - port: 8080
     nodePort: 30012
   selector:
-    app: web
+    version: beta
