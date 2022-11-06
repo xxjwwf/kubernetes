@@ -83,6 +83,12 @@ A probe is a diagnostic performed periodically by the kubelet on a container. To
 
 [**livenessProbe**]()
 
+![存活探针]()
+
 [**readinessProbe**]()
 
+![就绪探针]()
+
 [**startupProbe**]()
+
+![启动探针]()
