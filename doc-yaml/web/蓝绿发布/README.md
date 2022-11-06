@@ -18,11 +18,11 @@
 
 ### 配置
 
-**[beta环境配置](doc-yaml/web/蓝绿发布/tomcat-beta.yaml)**
+**[beta环境配置](https://github.com/xxjwwf/kubernetes/blob/main/doc-yaml/web/%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83/tomcat-beta.yaml)**
 
-**[prod环境配置](doc-yaml/web/蓝绿发布/tomcat-prod.yaml)**
+**[prod环境配置](https://github.com/xxjwwf/kubernetes/blob/main/doc-yaml/web/%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83/tomcat-prod.yaml)**
 
-**[服务配置](doc-yaml/web/蓝绿发布/tomcat-svc.yaml)**
+**[服务配置](https://github.com/xxjwwf/kubernetes/blob/main/doc-yaml/web/%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83/tomcat-svc.yaml)**
 
 ### 蓝绿切换
 ```yaml
