@@ -5,6 +5,7 @@
 用于本地测试快速拉取镜像
 
 ### [创建harbor的secret](https://github.com/xxjwwf/kubernetes/tree/main/doc-yaml/secret)
+用于登录harbor拉取镜像
 
 ### [安装nfs](https://github.com/xxjwwf/kubernetes/tree/main/nfs)
 
