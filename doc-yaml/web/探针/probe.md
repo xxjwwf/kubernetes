@@ -81,14 +81,24 @@ A probe is a diagnostic performed periodically by the kubelet on a container. To
 
 ## 实践
 
-[**livenessProbe**]()
+[**livenessProbe-exec配置**](https://github.com/xxjwwf/kubernetes/blob/main/doc-yaml/web/%E6%8E%A2%E9%92%88/liveness-exec.yaml)
+
+
+
+[**livenessProbe-httpGet配置**](https://github.com/xxjwwf/kubernetes/blob/main/doc-yaml/web/%E6%8E%A2%E9%92%88/liveness-httpGet.yaml)`使用httpGet的时候，如果请求的文件不在，就会出现诊断失败的情况，可以在pod启动后尝试修改web内相应文件名即可重现`
+
+
+[**livenessProbe-tcpSocket配置**](https://github.com/xxjwwf/kubernetes/blob/main/doc-yaml/web/%E6%8E%A2%E9%92%88/liveness-tcpSocket.yaml)`当端口不存在时，就会诊断失败，但是容器还是running状态，只是会不断重启`
+
 
 ![存活探针](https://github.com/xxjwwf/kubernetes/blob/main/static/img/%E5%AD%98%E6%B4%BB%E6%8E%A2%E9%92%88.png)
 
-[**readinessProbe**]()
+`
+存活探针在探测失败时，表现为容器的不断重启，直到达到上限。
+`
 
-![就绪探针]()
+**注意**
 
-[**startupProbe**]()
-
-![启动探针]()
+`
+就绪探针和启动探针的配置基本一致，只是探针名称不同而已，因此不再重复配置实验
+`
