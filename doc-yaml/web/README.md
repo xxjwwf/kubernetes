@@ -4,6 +4,7 @@
   2. 实现webapps目录的外部挂载，可实时更新web内容,实现蓝绿部署，3种探针的实现
   3. 实现tomcat服务的入口配置，ingress
   4. 实现rolebinding及serviceAccountName，实现configmap
+  5. 实现多种升级方式，滚动升级，扩缩容，回滚，暂停，继续
 
 [目录链接](https://github.com/xxjwwf/kubernetes/tree/main/doc-yaml/web/%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83)
 
