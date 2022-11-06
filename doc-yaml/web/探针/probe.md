@@ -81,7 +81,7 @@ A probe is a diagnostic performed periodically by the kubelet on a container. To
 
 ## 实践
 
-[**livenessProbe**]()
+[**livenessProbe**](https://github.com/xxjwwf/kubernetes/blob/main/doc-yaml/web/%E6%8E%A2%E9%92%88/liveness.yaml)
 
 ![存活探针](https://github.com/xxjwwf/kubernetes/blob/main/static/img/%E5%AD%98%E6%B4%BB%E6%8E%A2%E9%92%88.png)
 
