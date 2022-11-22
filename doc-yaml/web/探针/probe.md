@@ -75,8 +75,8 @@ A probe is a diagnostic performed periodically by the kubelet on a container. To
     2. 如果仅在探测成功时才开始向 Pod 发送流量，使用readinessProbe。在这种情况下，readiness probe 可能和 liveness probe 一样，
     但是readinessProbe会拒绝所有流量，直到探测成功。
 
-    3. 如果应用对后端服务有严格的依赖，可以同时使用 livenessProbe 和 readinessProbe。当应用程序本身健康时，liveness 探针
-    就会通过，但 readiness 探针还会检查每个所需的后端服务是否可用。这可以帮助避免将流量引导到只能以错误消息响应的 Pod
+    3. 如果应用对后端服务有严格的依赖，可以同时使用 livenessProbe 和 readinessProbe。当应用程序本身健康时，liveness 诊断通过，
+    但 readiness 探针还会检查每个所需的后端服务是否可用。这可以帮助避免将流量引导到只能以错误消息响应的 Pod
 
     4.容器需要在启动期间加载大数据、配置文件或迁移，您可以使用 启动探针
 
