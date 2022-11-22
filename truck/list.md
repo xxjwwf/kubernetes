@@ -37,3 +37,33 @@ base64还是有问题，得使用不换行模式进行转码：`cat ~/.docker/co
   sysctl -p
   systemctl restart network.service
 ```
+
+5.不同节点之间的pod无法通讯
+
+
+**现象**
+
+  - 在每个节点上，pod可以互相访问节点内的pod，并且pod可以ping通节点的物理网卡地址
+  - 节点之间可以相互ping通，节点间防火墙规则也已开放
+  - nodePort模式下，比如某个服务只在A节点有部署，那么就只能通过A节点的ip:nodeport来访问，通过其他节点的ip:nodeport访问是不通的（按道理应该是可以通过其他节点ip:nodeport来访问服务的）
+  - A节点不能ping通B节点的Pod的ip
+
+**解决过程**
+
+  - 重启flannel插件，无效
+  - 删除flannel插件，重装calico插件（部分成功，master02仍然不能通过nodeport正常访问相关服务）
+  - 经检查后，发现master02是新加的，ntpdate没有安装导致时间不一致，因此不能正常访问
+  - 安装ntpdate后，并同步时间重启服务器后正常
+
+
+**成功后的截图如下：**
+
+![master1](https://github.com/xxjwwf/kubernetes/blob/main/static/img/master01-calico.png)
+
+
+![master2](https://github.com/xxjwwf/kubernetes/blob/main/static/img/master02-calico.png)
+
+
+`
+在每个master上都能看到其他master和其他节点的网络配置，相当于是个路由表
+`
