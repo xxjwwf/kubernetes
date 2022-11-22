@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-nettest
+spec:
+  imagePullSecrets: 
+  - name: harbor-pull-secret # 使用harbor机器人账号创建
+  containers:
+  - name: nettest
+    image: harbor.xiejiawen.cn/k8s-learn/busybox:latest
+    command: ["sleep", "3600",] 
