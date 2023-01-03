@@ -195,3 +195,10 @@ spec:
 ~]# kubectl exec -it alpine -- sh
 /]# curl podIP:port/suffix
 ```
+
+`常用命令`
+
+```bash
+~]# kubectl get prometheusrule # 获取告警规则
+~]# kubectl get alertmanager,prometheus # 查看组件版本
+```
