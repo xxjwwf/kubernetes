@@ -21,7 +21,7 @@
 ## 排查
 **1.查看查询语句是否有报错**
 
-> a.使用exploer进入查询界面，数据类型调整为time series后执行run query，发现能够正常显示数据，说明指标数据是有的。
+> a.使用explore进入查询界面，数据类型调整为time series后执行run query，发现能够正常显示数据，说明指标数据是有的。
 
 ![explore里面能查询到数据](./img/explore-has-data.png)
 
@@ -33,7 +33,7 @@
 
 **3.修改dashboard的json model**
 
-> a.查看全局pulgin里面，time series的版本是`5.0.0`，但是这个dashboard的json配置上，每个panel里面都包含了这个配置`"pluginVersion": "8.2.0"`，我认为这个可能是个问题点，因此把这个配置的值修改为`5.0.0`，保存后再刷新，仍然不起任何作用。
+> a.查看全局pulgin里面，time series插件的版本是`5.0.0`，但是这个dashboard的json配置上，每个panel里面都包含了这个配置`"pluginVersion": "8.2.0"`，我认为这个可能是个问题点，因此把这个配置的值修改为`5.0.0`，保存后再刷新，仍然不起任何作用。
 >
 
 > b.这时想到：一个个配置去修改，还不如直接去生成一个新的dashboard看一下能不能兼容，于是新生成了个dashboard，然后将查询语句填入，数据类型修改为time series，发现可以正常显示图形了，那么剩下的就是对比这个新的dashboard和原来的dashboard的json配置即可了
