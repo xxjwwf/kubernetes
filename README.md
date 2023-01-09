@@ -19,6 +19,15 @@ nfs主要用于k8s内部的存储挂载，可用与web项目
 ### [HELM学习](../kubernetes/helm)
 
 学习helm的一体化交付，了解一个项目该使用哪些资源
+
+### [监控](../kubernetes/helm/%E7%9B%91%E6%8E%A7/)
+学习prometheus，grafana等组件
+
+### [Istio](../kubernetes/helm/istio/)
+学习istio网关，服务网格等
+
+
+
 ---
 ### 控制器
 
