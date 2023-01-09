@@ -16,7 +16,7 @@ nfs主要用于k8s内部的存储挂载，可用与web项目
 
 完成tomcat镜像的构建，资源挂载nfs等，并完成一系列的测试
 
-### [HELM学习](../kubernetes/helm)
+### [HELM学习](./helm)
 
 学习helm的一体化交付，了解一个项目该使用哪些资源
 
