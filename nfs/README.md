@@ -27,13 +27,13 @@ EOF
 **2.安装nfs-utils及rpcbind**
 
 ```bash
-yum install nfs-utils utils及rpcbind
+yum install nfs-utils 及rpcbind
 ```
 
 
 **3.添加配置** # 可以配置多行
 ```bash
-echo '/data 192.168.99.0/24(ro)'
+echo '/data 192.168.99.0/24(ro)' >> /etc/exports
 ```
 **启动**
 ```bash
